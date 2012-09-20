@@ -7,7 +7,7 @@ Vagrant::Config.run do |config|
   # please see the online documentation at vagrantup.com.
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "lucid32"
+  config.vm.box = "precise32"
 
   # Allow the creation of symbolic links in the shared folder.
   # This is needed for some builds with cmmi and for omelette to work.
@@ -34,17 +34,17 @@ Vagrant::Config.run do |config|
 
   # Forward a port from the guest to the host, which allows for outside
   # computers to access the VM, whereas host only networking does not.
-  config.vm.forward_port 8010, 8010
-  # config.vm.forward_port 8080, 8080
-  config.vm.forward_port 4084, 4084
+  #config.vm.forward_port 8010, 8010
+  config.vm.forward_port 8080, 8080
 
   # Share an additional folder to the guest VM. The first argument is
   # an identifier, the second is the path on the guest to mount the
   # folder, and the third is the path on the host to the actual folder.
   # config.vm.share_folder "v-data", "/vagrant_data", "../data"
   #config.vm.share_folder "src", "/src", "src"
-  #config.vm.share_folder "var", "/zopevar", "var"
-  config.vm.share_folder "eggs", "/home/vagrant/.buildout/buildout-cache/eggs", "eggs"
+
+  # A workaround for missing symbolic links on windows:
+  #config.vm.share_folder "eggs", "/home/vagrant/.buildout/buildout-cache/eggs", "eggs"
 
   # Enable provisioning with Puppet stand alone.  Puppet manifests
   # are contained in a directory path relative to this Vagrantfile.
