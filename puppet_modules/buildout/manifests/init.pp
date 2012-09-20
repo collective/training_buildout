@@ -1,7 +1,6 @@
 class buildout {
 
     exec { "aptitude update --quiet --assume-yes":
-        alias => "aptupdate",
         path => "/usr/bin",
         user => "root",
         timeout => 0,
@@ -34,10 +33,7 @@ class buildout {
         mode => '644',
     }
 
-    file { ['/vagrant/src',
-            '/vagrant/eggs',
-            '/vagrant/var',
-            '/home/vagrant/tmp',
+    file { ['/home/vagrant/tmp',
             '/home/vagrant/.buildout',
             '/home/vagrant/.buildout/buildout-cache',
             '/home/vagrant/.buildout/buildout-cache/eggs',
