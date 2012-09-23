@@ -21,16 +21,10 @@ class buildout {
                'libbz2-dev',
                'wget',
                'curl',
-               'elinks',]:
+               'elinks',
+               'gettext']:
         ensure => installed,
-    }
-
-    file { '/etc/ssh/ssh_known_hosts':
-        ensure => present,
-        content => template('buildout/known_hosts'),
-        owner => 'root',
-        group => 'root',
-        mode => '644',
+        before => Exec["virtualenv"],
     }
 
     file { ['/home/vagrant/tmp',
