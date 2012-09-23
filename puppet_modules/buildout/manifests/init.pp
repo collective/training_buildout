@@ -65,6 +65,7 @@ class buildout {
         user => 'vagrant',
         group => 'vagrant',
         before => Exec["untar1"],
+        timeout => 300,
     }
 
     exec {'tar xzf Plone-4.2.1-UnifiedInstaller.tgz':
@@ -73,6 +74,7 @@ class buildout {
         cwd => '/home/vagrant/tmp',
         user => 'vagrant',
         before => Exec["virtualenv"],
+        timeout => 300,
     }
 
 #    exec {'tar -C /home/vagrant/ -xjf buildout-cache.tar.bz2':
@@ -89,13 +91,15 @@ class buildout {
         user => 'vagrant',
         cwd => '/home/vagrant',
         before => Exec["install-plone"],
+        timeout => 300,
     }
 
     exec {'/home/vagrant/tmp/Plone-4.2.1-UnifiedInstaller/install.sh standalone --with-python=/home/vagrant/py27/bin/python --password=admin --instance=zinstance --target=/home/vagrant/training':
         alias => "install-plone",
-        creates => '/home/vagrant/training',
+        creates => '/home/vagrant/training/zinstance/instance',
         user => 'vagrant',
         cwd => '/home/vagrant',
+        timeout => 0,
     }
 
 }
