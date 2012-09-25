@@ -88,7 +88,7 @@ class buildout {
 
     exec {'/home/vagrant/tmp/Plone-4.2.1-UnifiedInstaller/install.sh standalone --with-python=/home/vagrant/py27/bin/python --password=admin --instance=zinstance --target=/home/vagrant/training':
         alias => "install_plone",
-        creates => '/home/vagrant/training/zinstance/instance',
+        creates => '/home/vagrant/training/zinstance/bin/buildout',
         user => 'vagrant',
         cwd => '/home/vagrant',
         timeout => 0,
