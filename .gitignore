@@ -1,3 +1,8 @@
+# Vagrant
+Vagrantfile
+manifests
+puppet_modules
+
 *.py[co]
 
 # Packages
