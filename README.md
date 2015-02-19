@@ -1,6 +1,6 @@
 training_buildout
 =================
 
-Buildout for the Mastering Plone Training using vagrant
+Buildout for the Mastering Plone Training
 
-http://plone-training.readthedocs.org/en/latest/plone_training_config/instructions.html
+http://plone-training.readthedocs.org
