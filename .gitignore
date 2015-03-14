@@ -18,6 +18,7 @@ var
 sdist
 develop-eggs
 .installed.cfg
+.codeintel
 
 # Installer logs
 pip-log.txt
