@@ -20,9 +20,6 @@ develop-eggs
 .installed.cfg
 .codeintel
 
-# Installer logs
-pip-log.txt
-
 # Unit test / coverage reports
 .coverage
 .tox
@@ -33,17 +30,21 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 
+# Virtualenv, Dev environment
 *.sublime-workspace
-src-buildout/
-src-mrd/
 *.swp
-\.#*
-local_stuff
 .vagrant
+\.#*
 etc/
 include/
 lib/
+lib64
 local/
+local_stuff
+pip-log.txt
+pip-selfcheck.json
+src-buildout/
+src-mrd/
 
 # local config
 local.cfg
