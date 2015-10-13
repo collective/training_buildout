@@ -50,3 +50,10 @@ src-mrd/
 local.cfg
 secret.cfg
 src/
+
+# Grunt, npm
+Gruntfile.js
+node_modules/
+npm-debug.log
+package.json
+temp_resources/
