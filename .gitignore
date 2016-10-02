@@ -45,6 +45,8 @@ pip-log.txt
 pip-selfcheck.json
 src-buildout/
 src-mrd/
+extends-cache/*
+!extends-cache/README.txt
 
 # local config
 local.cfg
