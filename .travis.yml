@@ -13,7 +13,7 @@ before_install:
   - mkdir -p $HOME/buildout-cache/{eggs,downloads}
   - virtualenv .
 install:
-  - bin/python bootstrap.py
+  - bin/pip install -r requirements.txt
 script:
   - bin/buildout
   - bin/test --all
