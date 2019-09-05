@@ -3,17 +3,29 @@ sudo: false
 cache:
   pip: true
   directories:
-    - $HOME/buildout-cache
+  - eggs
+  - downloads
 python:
-  - 2.7
+  - "3.7"
+matrix:
+  include:
+    - python: "2.7"
+    - python: "3.7"
+  sudo: true
+  fast_finish: true
 branches:
   only:
     - master
 before_install:
+  - virtualenv -p `which python` .
   - mkdir -p $HOME/buildout-cache/{eggs,downloads}
-  - virtualenv .
-install:
+  - mkdir $HOME/.buildout
+  - echo "[buildout]" > $HOME/.buildout/default.cfg
+  - echo "download-cache = $HOME/buildout-cache/downloads" >> $HOME/.buildout/default.cfg
+  - echo "eggs-directory = $HOME/buildout-cache/eggs" >> $HOME/.buildout/default.cfg
   - bin/pip install -r requirements.txt
+install:
+  - bin/buildout -N -t 3 code-analysis:return-status-codes=True annotate
+  - bin/buildout -N -t 3 code-analysis:return-status-codes=True
 script:
-  - bin/buildout
   - bin/test --all
