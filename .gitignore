@@ -60,3 +60,5 @@ npm-debug.log
 package.json
 temp_resources/
 pyvenv.cfg
+develop/
+share
