@@ -6,6 +6,7 @@ TODO The following instructions are here for a quick start.
 Remove them as soon as possible and link to the corresponding updated section on training.plone.org.
 
 Create a folder `backend` with a virtual Python environment.
+Clone this repo.
 Install prerequisites and run mxdev.
 
 ```shell
