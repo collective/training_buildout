@@ -60,3 +60,9 @@ npm-debug.log
 package.json
 temp_resources/
 pyvenv.cfg
+
+
+requirements-mxdev.txt
+constraints-mxdev.txt
+sources/
+instance/inituser

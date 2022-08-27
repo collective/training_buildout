@@ -1,0 +1,11 @@
+default_context:
+  initial_user_name: "admin"
+  initial_user_password: "secret"
+
+  # wsgi_listen: localhost:8082
+
+  load_zcml:
+    package_includes:
+      ["ploneconf.site", "training.votable", "collective.easyform"]
+
+  db_storage: direct
