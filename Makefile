@@ -15,6 +15,16 @@ GREEN=`tput setaf 2`
 RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
+.PHONY: all
+all: build
+
+# Add the following 'help' target to your Makefile
+# And add help text after each target name starting with '\#\#'
+.PHONY: help
+help: .SHELLFLAGS:=-eu -o pipefail -O inherit_errexit -c
+help: ## This help message
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+
 
 bin/pip:
 	@echo "$(GREEN)==> Setup Virtual Env$(RESET)"
@@ -24,9 +34,8 @@ bin/pip:
 instance/etc/zope.ini:	bin/pip
 	@echo "$(GREEN)==> Install Plone and create instance$(RESET)"
 	venv/bin/cookiecutter -f --no-input --config-file instance.yaml https://github.com/plone/cookiecutter-zope-instance
-	mkdir -p var/{filestorage,blobstorage,cache,log}
 
-.PHONY: build-dev
+.PHONY: build
 build: instance/etc/zope.ini ## pip install Plone packages
 	@echo "$(GREEN)==> Setup Build$(RESET)"
 	venv/bin/mxdev -c mx.ini
