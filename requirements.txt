@@ -7,5 +7,5 @@ zope.testrunner
 
 
 # List of add-ons that are needed.
-ploneconf.site
-training.votable
+# ploneconf.site
+# training.votable

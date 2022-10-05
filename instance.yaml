@@ -5,6 +5,7 @@ default_context:
   # wsgi_listen: localhost:8082
 
   load_zcml:
-    package_includes: ["ploneconf.site", "training.votable"]
+    # package_includes: ["ploneconf.site", "training.votable"]
+    package_includes: []
 
   db_storage: direct
