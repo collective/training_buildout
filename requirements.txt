@@ -9,3 +9,7 @@ zope.testrunner
 # List of add-ons that are needed.
 ploneconf.site
 # training.votable
+
+# Debugging
+Products.PDBDebugMode
+plone.reload
