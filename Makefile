@@ -43,4 +43,4 @@ build: instance/etc/zope.ini ## pip install Plone packages
 
 .PHONY: start
 start: ## Start a Plone instance on localhost:8080
-	PYTHONWARNINGS=ignore venv/bin/runwsgi instance/etc/zope.ini
+	PYTHONWARNINGS=ignore venv/bin/runwsgi -d instance/etc/zope.ini
