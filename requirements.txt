@@ -10,6 +10,9 @@ zope.testrunner
 ploneconf.site
 # training.votable
 
+# Development
+Products.PrintingMailHost
+
 # Debugging
 Products.PDBDebugMode
 plone.reload
