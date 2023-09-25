@@ -28,7 +28,7 @@ help: ## This help message
 
 bin/pip:
 	@echo "$(GREEN)==> Setup Virtual Env$(RESET)"
-	python3 -m venv venv
+	python -m venv venv
 	venv/bin/pip install -U "pip" "wheel" "cookiecutter" "mxdev"
 
 instance/etc/zope.ini:	bin/pip
@@ -42,5 +42,5 @@ build: instance/etc/zope.ini ## pip install Plone packages
 	venv/bin/pip install -r requirements-mxdev.txt
 
 .PHONY: start
-start: ## Start a Plone instance on localhost:8080
+start: ## Start a Plone instance on localhost:8080 in debug mode
 	PYTHONWARNINGS=ignore venv/bin/runwsgi -d instance/etc/zope.ini
