@@ -1,6 +1,6 @@
 # Backend for the Mastering Plone Development Training
 
-The training documentation can be found at [training.plone.org](https://training.plone.org)
+The training documentation can be found at [training.plone.org](https://training.plone.org/mastering-plone/)
 
 Build the backend with:
 
