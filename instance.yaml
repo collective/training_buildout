@@ -5,6 +5,9 @@ default_context:
   # wsgi_listen: localhost:8082
 
   zcml_package_includes: ploneconf.site, Products.PDBDebugMode, plone.reload
+  # if you want to include the training.votable:
+  # zcml_package_includes: ploneconf.site, Products.PDBDebugMode, plone.reload, training.votable
+
   # include meta.zcml of collective.monkeypatcher to provide directive monkey:patch for Products.PDBDebugMode
   zcml_package_metas: collective.monkeypatcher
 
