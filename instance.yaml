@@ -1,6 +1,6 @@
 default_context:
   initial_user_name: "admin"
-  initial_user_password: "secret"
+  initial_user_password: "admin"
 
   # wsgi_listen: localhost:8082
 
