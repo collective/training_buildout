@@ -28,7 +28,7 @@ help: ## This help message
 
 bin/pip:
 	@echo "$(GREEN)==> Setup Virtual Env$(RESET)"
-	python -m venv venv
+	python3 -m venv venv
 	venv/bin/pip install -U "pip" "wheel" "cookiecutter" "mxdev"
 
 instance/etc/zope.ini:	bin/pip
